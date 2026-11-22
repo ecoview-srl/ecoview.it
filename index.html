@@ -287,7 +287,7 @@ V.home=()=>`
 </div></section>`;
 
 const ACTS=[
- {h:'servizi',img:'valutazioni',k:'Consulenza e pianificazione',t:'Ecoview',d:"Consulenza ambientale e pianificazione: valutazioni ambientali (VIA, VAS, VIncA), biodiversità, foreste e agronomia, pianificazione, paesaggio e acustica.",cta:'La consulenza'},
+ {h:'servizi',img:'valutazioni',k:'Ambiente, biodiversità e territorio',t:'Ecoview',d:"Valutazioni ambientali (VIA, VAS, VIncA), biodiversità, foreste e agronomia, pianificazione, paesaggio e acustica.",cta:'La consulenza'},
  {h:'ecoview-gis',img:'sistemi',k:'Cartografia e WebGIS',t:'Ecoview GIS',d:"Cartografia digitale, banche dati territoriali, applicazioni WebGIS, hosting e rilievi con drone, anche per chi non ha bisogno di una consulenza ambientale.",cta:'I servizi GIS'},
  {h:'ecoview-formazione',img:'formazione',k:'Corsi e webinar',t:'Ecoview Formazione',d:"Corsi professionalizzanti e webinar su valutazioni ambientali e GIS, a partire dal Corso avanzato in Valutazioni Ambientali nel 2027.",cta:'La formazione'},
  {h:'officine-ecoview',img:'officine',k:'Cultura e territorio',t:'Officine Ecoview',d:"Lo spazio culturale di Ecoview: incontri, premi ed eventi per parlare di territorio, natura e società con linguaggi diversi. Nel 2027 la parola chiave è Impronta.",cta:'Le Officine'}];
@@ -320,7 +320,7 @@ ${[...D.servizi.consulenza,...D.servizi.gis].map(s=>`<tr><td>${s.s?`<b>${esc(s.s
 <p class="url" style="margin-top:14px">I loghi verranno sostituiti dall'elenco per nomi degli enti, raggruppati per tipo.</p></div></section>`;
 
 const spLine=s=>`<p class="spl">Specialisti: ${s.sp.map(esc).join(', ')}</p>`;
-V.servizi=()=>`<section class="band"><div class="wrap">${crumb([['home','Home'],[0,'Ecoview – consulenza']])}<h1>Consulenza ambientale e pianificazione</h1>${url('servizi-consulenza-ambientale/')}
+V.servizi=()=>`<section class="band"><div class="wrap">${crumb([['home','Home'],[0,'Ecoview – consulenza']])}<h1>Ambiente, biodiversità e territorio</h1>${url('servizi-consulenza-ambientale/')}
 <p class="intro">Le attività tecnico-scientifiche di Ecoview per enti pubblici, imprese e privati. Il nostro approccio integra le valutazioni con la conoscenza diretta degli ecosistemi, per affrontare problemi territoriali complessi. Coordinamento: <b>Mauro Fabrizio</b> per l'Abruzzo, <b>Ludovico Frate</b> per il Molise.</p>
 ${D.servizi.consulenza.map(s=>{const n=inArea(s.id).length;return `<div class="serv" id="s-${s.id}"><div><img class="sph" src="img/foto/${s.img}.jpg" alt="" loading="lazy"></div><div>${s.s?`<span class="cond sig">${esc(s.s)}</span>`:''}<h3 class="stitle">${esc(s.t)}</h3>${s.p.map(p=>`<p>${esc(p)}</p>`).join('')}${s.li.length?`<ul>${s.li.map(l=>`<li>${esc(l)}</li>`).join('')}</ul>`:''}${spLine(s)}${n?`<p style="margin-top:8px"><a href="#lavori-${s.id}">Vedi ${n===1?'il lavoro':'i '+n+' lavori'} di quest'area →</a></p>`:''}</div></div>`}).join('')}
 <p class="intro" style="margin-top:32px">Il GIS attraversa tutto il lavoro di consulenza; come servizio autonomo è offerto da <a href="#ecoview-gis">Ecoview GIS</a>.</p>
