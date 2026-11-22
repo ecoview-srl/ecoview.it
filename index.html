@@ -236,7 +236,7 @@ V.home=()=>`
 </div></section>
 <section class="band portal"><div class="wrap"><h2>Il portale</h2><div>
  <p>Ecoview riunisce società e professionisti del settore ambientale. All'interno opera Ecoview srl, specializzata in sistemi informativi territoriali, cartografia GIS e WebGIS; il portale è anche lo spazio professionale dei soci fondatori, che lavorano come liberi professionisti su pianificazione, valutazioni ambientali, ecologia del paesaggio, gestione forestale e conservazione della biodiversità.</p>
- <p>Ecoview srl è socia degli spin-off universitari bioStatys (Università dell'Aquila, dal 2025) e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a> (Università del Molise, dal 2026).</p></div></div></section>
+ <p>Ecoview srl è socia degli spin-off universitari <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a> (Università dell'Aquila, dal 2025) e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a> (Università del Molise, dal 2026).</p></div></div></section>
 <section class="band" style="padding-top:0"><div class="wrap">
  <div class="portal-head"><h2>Un marchio, quattro attività</h2><p>Ecoview nasce come studio associato di consulenza ambientale; Ecoview S.r.l. nasce poi per il WebGIS. Oggi riuniamo queste esperienze sotto un solo nome, con sedi a Teramo e in Molise.</p></div>
  <div class="acts">${ACTS.map(a=>`<a class="act" href="#${a.h}"><div class="ph" style="background-image:url(img/foto/${a.img}.jpg)" role="img" aria-label=""></div><div class="actb"><span class="k">${esc(a.k)}</span><h3>${esc(a.t)}</h3><p>${esc(a.d)}</p><span class="more2">${esc(a.cta)} →</span></div></a>`).join('')}</div>
@@ -281,7 +281,7 @@ ${p.b.length?`<details><summary>Profilo completo</summary>${p.b.map(x=>`<p>${esc
 V['chi-siamo']=()=>`<section class="band"><div class="wrap">${crumb([['home','Home'],[0,'Persone']])}<h1>Le persone</h1>${url('chi-siamo/')}
 <div style="margin-top:24px;columns:2 340px;column-gap:48px" class="prose">
 <p>Ecoview riunisce sotto un solo marchio professionisti che lavorano insieme da anni: i due soci fondatori, che coordinano le sedi in Abruzzo e in Molise, e un gruppo di collaboratori con competenze specialistiche, dalla botanica all'acustica.</p>
-<p>Ecoview S.r.l. è socia di due spin-off universitari: bioStatys, dell'Università degli Studi dell'Aquila (dal 2025), e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a>, dell'Università degli Studi del Molise (dal 2026), un legame diretto con la ricerca scientifica.</p></div></div></section>
+<p>Ecoview S.r.l. è socia di due spin-off universitari: <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a>, dell'Università degli Studi dell'Aquila (dal 2025), e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a>, dell'Università degli Studi del Molise (dal 2026), un legame diretto con la ricerca scientifica.</p></div></div></section>
 <section class="band paper"><div class="wrap"><div class="head"><h2>Soci fondatori</h2></div><div class="people">${PEOPLE.slice(0,2).map(personCard).join('')}</div></div></section>
 <section class="band"><div class="wrap"><div class="head"><h2>I collaboratori</h2></div><div class="people">${PEOPLE.slice(2).map(personCard).join('')}</div></div></section>
 <section class="band paper"><div class="wrap"><div class="head"><h2>Chi segue cosa</h2><p>Gli specialisti di riferimento per ogni area</p></div>
