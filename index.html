@@ -173,6 +173,11 @@ footer a{color:#fff}footer h3{color:#fff;font-size:18px;margin-bottom:8px}
 @media(max-width:600px){.actlogo{height:44px}.brandrow img{height:28px}}
 .reg .who{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.reg .who span{font-size:.76rem;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:1px 9px;color:var(--ink)}
 .reg .c a{color:inherit;text-decoration:none;border-bottom:1px dotted currentColor}.reg .c b{font-weight:600}
+.people.big{grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:40px}
+.people.big .person{grid-template-columns:180px minmax(0,1fr);gap:26px}
+.people.big .mono{width:180px;height:180px;aspect-ratio:1;align-self:start}
+.people.big h3{font-size:1.5rem}
+@media(max-width:600px){.people.big{grid-template-columns:1fr}.people.big .person{grid-template-columns:1fr}.people.big .mono{width:160px;height:160px;justify-self:start}}
 </style>
 </head>
 <body>
@@ -306,7 +311,7 @@ V['chi-siamo']=()=>`<section class="band"><div class="wrap">${crumb([['home','Ho
 <div style="margin-top:24px;columns:2 340px;column-gap:48px" class="prose">
 <p>Ecoview riunisce sotto un solo marchio professionisti che lavorano insieme da anni: i due soci fondatori, che coordinano le sedi in Abruzzo e in Molise, e un gruppo di collaboratori con competenze specialistiche, dalla botanica all'acustica.</p>
 <p>Ecoview S.r.l. è socia di due spin-off universitari: <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a>, dell'Università degli Studi dell'Aquila (dal 2025), e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a>, dell'Università degli Studi del Molise (dal 2026), un legame diretto con la ricerca scientifica.</p></div></div></section>
-<section class="band paper"><div class="wrap"><div class="head"><h2>Soci fondatori</h2></div><div class="people">${PEOPLE.slice(0,2).map(personCard).join('')}</div></div></section>
+<section class="band paper"><div class="wrap"><div class="head"><h2>Soci fondatori</h2></div><div class="people big">${PEOPLE.slice(0,2).map(personCard).join('')}</div></div></section>
 <section class="band"><div class="wrap"><div class="head"><h2>I collaboratori</h2></div><div class="people">${PEOPLE.slice(2).map(personCard).join('')}</div></div></section>
 <section class="band paper"><div class="wrap"><div class="head"><h2>Chi segue cosa</h2><p>Gli specialisti di riferimento per ogni area</p></div>
 <div class="scroll"><table class="matrix stack"><thead><tr><th>Area</th><th>Specialisti</th></tr></thead><tbody>
