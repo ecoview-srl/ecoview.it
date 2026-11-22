@@ -165,6 +165,12 @@ footer a{color:#fff}footer h3{color:#fff;font-size:18px;margin-bottom:8px}
 .wb{padding:18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}.wb h3{margin:0}.wb p{margin:0}
 .wtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}.wtags span{font-size:.78rem;border:1px solid var(--line);padding:2px 8px;border-radius:20px}
 .wbtn{align-self:flex-start;margin-top:8px}
+.actlogo{display:block;height:64px;width:auto;max-width:100%;margin:14px 0 18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.brandrow{display:flex;flex-wrap:wrap;gap:12px 14px;align-items:center;margin-top:22px}
+.brandrow a{display:block;background:#fff;padding:9px 12px;border-radius:6px;border:1px solid var(--line);transition:border-color .2s}
+.brandrow a:hover{border-color:var(--green)}.brandrow img{height:26px;width:auto;display:block}
+@media(max-width:600px){.actlogo{height:44px}.brandrow img{height:28px}}
 </style>
 </head>
 <body>
@@ -246,7 +252,8 @@ V.home=()=>`
 </div></section>
 <section class="band portal"><div class="wrap"><h2>Il portale</h2><div>
  <p>Ecoview riunisce società e professionisti del settore ambientale. All'interno opera Ecoview srl, specializzata in sistemi informativi territoriali, cartografia GIS e WebGIS; il portale è anche lo spazio professionale dei soci fondatori, che lavorano come liberi professionisti su pianificazione, valutazioni ambientali, ecologia del paesaggio, gestione forestale e conservazione della biodiversità.</p>
- <p>Ecoview srl è socia degli spin-off universitari <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a> (Università dell'Aquila, dal 2025) e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a> (Università del Molise, dal 2026).</p></div></div></section>
+ <p>Ecoview srl è socia degli spin-off universitari <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a> (Università dell'Aquila, dal 2025) e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a> (Università del Molise, dal 2026).</p>
+ <div class="brandrow"><a href="#ecoview-gis"><img src="img/brand/ecoview-gis.png" alt="Ecoview GIS"></a><a href="#ecoview-formazione"><img src="img/brand/ecoview-formazione.png" alt="Ecoview Formazione"></a><a href="#officine-ecoview"><img src="img/brand/ecoview-officine.png" alt="Officine Ecoview"></a></div></div></div></section>
 <section class="band" style="padding-top:0"><div class="wrap">
  <div class="portal-head"><h2>Un marchio, quattro attività</h2><p>Ecoview nasce come studio associato di consulenza ambientale; Ecoview S.r.l. nasce poi per il WebGIS. Oggi riuniamo queste esperienze sotto un solo nome, con sedi a Teramo e in Molise.</p></div>
  <div class="acts">${ACTS.map(a=>`<a class="act" href="#${a.h}"><div class="ph" style="background-image:url(img/foto/${a.img}.jpg)" role="img" aria-label=""></div><div class="actb"><span class="k">${esc(a.k)}</span><h3>${esc(a.t)}</h3><p>${esc(a.d)}</p><span class="more2">${esc(a.cta)} →</span></div></a>`).join('')}</div>
@@ -323,7 +330,7 @@ const WEBGIS=[
  {t:'Piano Regionale di Protezione Civile',c:'Regione Abruzzo, per Geovit srl',y:2023,d:"Cartografia e WebGIS del Piano Regionale di Protezione Civile della Regione Abruzzo.",tag:['Protezione civile']},
  {t:'Piani Provinciali di Protezione Civile',c:'Province abruzzesi, per Geovit srl',y:2023,d:"Cartografia e WebGIS dei Piani Provinciali di Protezione Civile della Regione Abruzzo.",tag:['Protezione civile']},
  {t:'Banche dati del gruppo Hyla',c:'Hyla',y:0,d:"Hosting delle banche dati di Hyla: consulenza naturalistica, azienda agricola e associazione per attività in natura.",tag:['Hosting','Banca dati']}];
-V['ecoview-gis']=()=>`<section class="band actband"><div class="wrap two"><div>${crumb([['home','Home'],[0,'Ecoview GIS']])}<h1>Ecoview GIS</h1><p class="intro">È l'attività da cui è nata Ecoview S.r.l. e quella per cui siamo più conosciuti fuori regione. Cartografie, banche dati territoriali, applicazioni WebGIS e rilievi con drone, anche per chi non ha bisogno di una consulenza ambientale.</p><p>Responsabile: <b>Ludovico Frate</b></p></div><img class="tall" src="img/foto/sistemi.jpg" alt="Carta tematica realizzata da Ecoview" style="aspect-ratio:4/3"></div></section>
+V['ecoview-gis']=()=>`<section class="band actband"><div class="wrap two"><div>${crumb([['home','Home'],[0,'Ecoview GIS']])}<img class="actlogo" src="img/brand/ecoview-gis.png" alt="Ecoview GIS"><h1 class="sr">Ecoview GIS</h1><p class="intro">È l'attività da cui è nata Ecoview S.r.l. e quella per cui siamo più conosciuti fuori regione. Cartografie, banche dati territoriali, applicazioni WebGIS e rilievi con drone, anche per chi non ha bisogno di una consulenza ambientale.</p><p>Responsabile: <b>Ludovico Frate</b></p></div><img class="tall" src="img/foto/sistemi.jpg" alt="Carta tematica realizzata da Ecoview" style="aspect-ratio:4/3"></div></section>
 <section class="band"><div class="wrap"><div class="grid ggrid">${D.servizi.gis.map(s=>`<div class="card"><h3>${esc(s.t)}</h3><p>${esc(s.p[0])}</p><p class="spl" style="margin-top:auto">Specialisti: ${s.sp.map(esc).join(', ')}</p></div>`).join('')}</div>
 <div class="feature"><span class="cond sig">Hosting WebGIS</span><h2>Pubblicare i propri progetti QGIS sul web</h2>
 <p>Si prepara il progetto in QGIS, lo si carica in uno spazio dedicato e lo si consulta e modifica online, con sincronizzazione dei dati tra PC e server, su piattaforma Lizmap. Per chi vuole solo una mappa interattiva sul proprio sito basta fornirci il layer: al resto pensiamo noi. Il servizio raccoglie l'esperienza di NaturaGIS, che ospita tra gli altri Road Ecology Abruzzo e Molise, le banche dati del gruppo Hyla e il WebGIS del Piano del Parco Nazionale della Majella.</p>
@@ -340,7 +347,7 @@ V['ecoview-gis']=()=>`<section class="band actband"><div class="wrap two"><div>$
 <div class="reg mini">${byCat.gis.items.slice(0,5).map(i=>`<div class="row"><div class="d">${esc(i.d||'—')}</div><div><div class="t">${esc(i.t)}</div><div class="x">${esc(i.x)}</div></div></div>`).join('')}</div></div>
 </div></section>`;
 
-V['ecoview-formazione']=()=>`<section class="band actband"><div class="wrap two"><div>${crumb([['home','Home'],[0,'Ecoview Formazione']])}<h1>Ecoview Formazione</h1><p class="intro">Corsi professionalizzanti e webinar su valutazioni ambientali e GIS, rivolti a professionisti, tecnici, studenti e neolaureati. Mettiamo a disposizione l'esperienza maturata in ${byCat.formazione.items.length} docenze e corsi, compresa quella di LezioniGIS.</p></div><img class="tall" src="img/foto/formazione.jpg" alt="" style="aspect-ratio:4/3"></div></section>
+V['ecoview-formazione']=()=>`<section class="band actband"><div class="wrap two"><div>${crumb([['home','Home'],[0,'Ecoview Formazione']])}<img class="actlogo" src="img/brand/ecoview-formazione.png" alt="Ecoview Formazione"><h1 class="sr">Ecoview Formazione</h1><p class="intro">Corsi professionalizzanti e webinar su valutazioni ambientali e GIS, rivolti a professionisti, tecnici, studenti e neolaureati. Mettiamo a disposizione l'esperienza maturata in ${byCat.formazione.items.length} docenze e corsi, compresa quella di LezioniGIS.</p></div><img class="tall" src="img/foto/formazione.jpg" alt="" style="aspect-ratio:4/3"></div></section>
 <section class="band"><div class="wrap">
 <div class="feature"><span class="cond sig">2027</span><h2>Corso avanzato in Valutazioni Ambientali</h2>
 <p>Un percorso professionalizzante di circa <b>50 ore in 8 moduli</b> su VAS, VIA e VIncA: metodi di analisi delle componenti ambientali, strumenti GIS, esercitazioni e casi reali seguiti dagli specialisti Ecoview, con contributi esterni e universitari.</p>
@@ -349,7 +356,7 @@ V['ecoview-formazione']=()=>`<section class="band actband"><div class="wrap two"
 <div><h2>Docenze</h2><p style="margin-top:12px">Corsi GIS per enti, ordini professionali e università, formazione per guide e tecnici, seminari universitari.</p><p><a href="#formazione">Vedi le ${byCat.formazione.items.length} docenze →</a></p></div></div>
 </div></section>`;
 
-V['officine-ecoview']=()=>`<section class="band actband"><div class="wrap two"><div>${crumb([['home','Home'],[0,'Officine Ecoview']])}<h1>Officine Ecoview</h1><p class="intro" style="font-style:italic">Lo spazio culturale che nasce dall'esperienza scientifica e professionale di Ecoview per promuovere la conoscenza, il confronto e la riflessione sulle relazioni tra territorio, natura e società.</p><p>Responsabile: <b>Mauro Fabrizio</b></p></div><img class="tall" src="img/foto/officine.jpg" alt="" style="aspect-ratio:4/3"></div></section>
+V['officine-ecoview']=()=>`<section class="band actband"><div class="wrap two"><div>${crumb([['home','Home'],[0,'Officine Ecoview']])}<img class="actlogo" src="img/brand/ecoview-officine.png" alt="Officine Ecoview"><h1 class="sr">Officine Ecoview</h1><p class="intro" style="font-style:italic">Lo spazio culturale che nasce dall'esperienza scientifica e professionale di Ecoview per promuovere la conoscenza, il confronto e la riflessione sulle relazioni tra territorio, natura e società.</p><p>Responsabile: <b>Mauro Fabrizio</b></p></div><img class="tall" src="img/foto/officine.jpg" alt="" style="aspect-ratio:4/3"></div></section>
 <section class="band"><div class="wrap">
 <div class="two"><div><p>Le iniziative delle Officine si caratterizzano per rigore, curiosità e spirito critico, e affrontano anche argomenti complessi con linguaggi accessibili, capaci di stimolare la partecipazione e, quando opportuno, di lasciare spazio all'ironia.</p>
 <p>Ambiente e territorio restano il centro dei temi. L'apertura ad altri linguaggi, come cinema, musica, fotografia e spettacolo, riguarda il modo di affrontarli.</p></div>
