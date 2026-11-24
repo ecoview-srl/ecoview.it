@@ -187,7 +187,7 @@ footer a{color:#fff}footer h3{color:#fff;font-size:18px;margin-bottom:8px}
 .act .more2{margin-top:auto;text-decoration:none}
 .act:hover{transform:none}
 @media(min-width:601px){.reg.bib .row.hs{grid-template-columns:7.5em minmax(0,1fr) 64px}}.reg.bib .bc img{width:64px;height:auto;display:block;border:1px solid var(--line)}
-.reg.bib .sch{display:inline-block;margin-top:6px;font-size:14px;font-weight:600;text-decoration:none}
+.reg.bib .xl{display:block;color:inherit;text-decoration:none}.reg.bib .xl:hover{color:var(--ink)}.reg.bib .xl:hover .sch{text-decoration:underline}.reg.bib .sch{white-space:nowrap;font-size:14px;font-weight:600;color:var(--blue,#2B4170)}
 @media(max-width:600px){.reg.bib .row.hs{grid-template-columns:1fr}.reg.bib .bc{display:none}}
 </style>
 </head>
@@ -425,10 +425,10 @@ const hiAut=c=>{let h=esc(c);Object.values(PN).forEach(n=>{const [nome,...cg]=n.
 function bindBib(items){let lim=30;const q=$('#bq'),ty=$('#bt'),pp=$('#bp');const draw=()=>{const s=q.value.trim().toLowerCase(),x=ty.value,p=pp?pp.value:'';
  const f=items.filter(i=>(!x||i.t===x)&&(!p||i.p.includes(p))&&(!s||i.c.toLowerCase().includes(s)));
  $('#bcnt').textContent=f.length===items.length?`${f.length} pubblicazioni`:`${f.length} di ${items.length} pubblicazioni`;
- $('#breg').innerHTML=f.slice(0,lim).map(i=>`<div class="row${i.slug?' hs':''}"><div class="d">${i.y||'—'}</div><div><div class="c">${esc(i.t)}</div><div class="x">${hiAut(i.c)}</div>${i.slug?`<a class="sch" href="#${i.slug}">Scheda →</a>`:''}</div>${i.slug&&i.cover&&i.cover!=='None'?`<a href="#${i.slug}" class="bc"><img src="${i.cover}" alt="" loading="lazy"></a>`:''}</div>`).join('')||'<p style="padding:18px 0">Nessuna pubblicazione corrisponde alla ricerca.</p>';
+ $('#breg').innerHTML=f.slice(0,lim).map(i=>`<div class="row${i.slug?' hs':''}"><div class="d">${i.y||'—'}</div><div><div class="c">${esc(i.t)}</div>${i.slug?`<a class="x xl" href="#${i.slug}">${hiAut(i.c)} <span class="sch">Scheda →</span></a>`:`<div class="x">${hiAut(i.c)}</div>`}</div>${i.slug&&i.cover&&i.cover!=='None'?`<a href="#${i.slug}" class="bc"><img src="${i.cover}" alt="" loading="lazy"></a>`:''}</div>`).join('')||'<p style="padding:18px 0">Nessuna pubblicazione corrisponde alla ricerca.</p>';
  $('#bmore').hidden=f.length<=lim};q.oninput=()=>{lim=30;draw()};ty.onchange=()=>{lim=30;draw()};if(pp)pp.onchange=()=>{lim=30;draw()};$('#bmore').onclick=()=>{lim+=60;draw()};draw()}
 V.pubblicazioni=()=>`<section class="band"><div class="wrap">${crumb([['home','Home'],[0,'Pubblicazioni']])}<h1>Pubblicazioni</h1>${url('pubblicazioni/')}
-<p class="intro" style="margin-top:14px">${D.bib.length} pubblicazioni di soci e collaboratori: articoli scientifici, libri, capitoli, report tecnici e contributi a convegni. Le pubblicazioni scritte insieme compaiono una volta sola; quelle con una scheda di approfondimento hanno il collegamento \u201cScheda\u201d.</p>
+<p class="intro" style="margin-top:14px">${D.bib.length} pubblicazioni di soci e collaboratori: articoli scientifici, libri, capitoli, report tecnici e contributi a convegni. Le pubblicazioni scritte insieme compaiono una volta sola; cliccando su quelle con il segno \u201cScheda\u201d si apre la loro scheda di approfondimento.</p>
 ${bibTools(D.bib)}
 </div></section>`;
 V.pubblicazioni.after=()=>bindBib(D.bib);
