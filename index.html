@@ -277,7 +277,7 @@ V.home=()=>`
  <p>Ecoview srl è socia degli spin-off universitari <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a> (Università dell'Aquila, dal 2025) e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a> (Università del Molise, dal 2026).</p>
  <div class="brandrow">${BRANDS.map(([h,f,n])=>`<a href="#${h}"><img src="img/brand/${f}.png" alt="${n}"></a>`).join('')}</div></div></div></section>
 <section class="band" style="padding-top:0"><div class="wrap">
- <div class="portal-head"><h2>Un marchio, cinque attività</h2></div>
+ <div class="portal-head" style="grid-template-columns:1fr"><h2>Un marchio, cinque attività</h2></div>
  <div class="acts">${ACTS.map(a=>`<a class="act" href="#${a.h}"><div class="ph" style="background-image:url(img/foto/${a.img}.jpg)" role="img" aria-label=""></div><div class="actb"><span class="k">${esc(a.k)}</span><h3>${esc(a.t)}</h3><p>${esc(a.d)}</p><span class="more2">${esc(a.cta)} →</span></div></a>`).join('')}</div>
 </div></section>
 <section class="band" style="padding-top:0"><div class="wrap">
