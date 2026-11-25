@@ -199,6 +199,7 @@ footer a{color:#fff}footer b{color:#fff;font-weight:600}footer .nw{white-space:n
 .collh a{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:baseline;align-content:start;grid-template-rows:auto 1fr;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:8px;text-decoration:none;color:var(--ink)}
 .collh a:hover{background:var(--paper)}.collh b{font-size:2rem;line-height:1;color:var(--green2);grid-row:span 2;min-width:2.2ch}.collh small{margin-top:4px}.collh span{font-weight:600}.collh small{color:var(--mute);font-size:14px;line-height:1.45}
 .wchi{font-size:14px;color:var(--green2);font-weight:600;margin:-4px 0 10px}
+.prose h2{font-size:1.25rem;margin:26px 0 8px}.prose p{max-width:none}
 </style>
 </head>
 <body>
@@ -454,7 +455,17 @@ ${p.abstract?`<h2 style="font-size:24px;margin-bottom:10px">Abstract</h2><div cl
 const pageHTML=(slug,title,path,cur)=>()=>`<section class="band"><div class="wrap" style="max-width:900px">${crumb([['home','Home'],['pubblicazioni','Pubblicazioni'],[0,title]])}<h1>${title}</h1>${url(path)}${pubChips(cur)}<div class="prose">${D.pages[slug]||''}</div></div></section>`;
 V['tesi-seguite']=pageHTML('tesi-seguite','Tesi seguite','tesi-seguite/','tesi-seguite-p');
 V['report-tecnici']=pageHTML('report-tecnici','Report tecnici','report-tecnici/','report-tecnici');
-V['privacy-policy']=()=>`<section class="band"><div class="wrap" style="max-width:900px">${crumb([['home','Home'],[0,'Privacy']])}<h1>Privacy e cookie policy</h1>${url('privacy-policy/')}<p class="note" style="margin-top:20px">Il sito attuale pubblica come privacy policy il testo di esempio di WordPress ("Testo suggerito…"): va sostituita con un'informativa vera, intestata al titolare del trattamento.</p></div></section>`;
+V['privacy-policy']=()=>`<section class="band"><div class="wrap prose" style="max-width:860px">${crumb([['home','Home'],[0,'Privacy']])}<h1>Privacy e cookie policy</h1>
+<p class="note" style="margin:14px 0 22px">Bozza da verificare prima della pubblicazione (sede legale e testo finale).</p>
+<h2>Titolare del trattamento</h2><p>Ecoview srl, P.IVA 02096930678, sede legale: <b>[da indicare]</b>. Contatti: <a href="mailto:info@ecoview.it">info@ecoview.it</a> · PEC ecoviewsrl2021@pec.it.</p>
+<h2>Quali dati trattiamo</h2><p>Questo sito è informativo: non ha moduli, aree riservate, commenti né newsletter, e non chiede dati personali. Non usiamo cookie di profilazione né strumenti di statistica o tracciamento.</p>
+<p><b>Dati di navigazione.</b> Il sito è ospitato su GitHub Pages (GitHub Inc., USA). Come ogni server web, GitHub registra in automatico alcuni dati tecnici delle visite, tra cui l'indirizzo IP, per garantire il funzionamento e la sicurezza del servizio. Il trattamento avviene secondo l'informativa di GitHub; il trasferimento verso gli Stati Uniti si basa sul Data Privacy Framework UE-USA.</p>
+<p><b>Caratteri tipografici.</b> I caratteri del sito sono caricati da Google Fonts (Google Ireland Ltd): per scaricarli il browser comunica a Google il proprio indirizzo IP.</p>
+<p><b>E-mail.</b> Se ci scrivi, usiamo il tuo indirizzo e i dati del messaggio solo per risponderti e per l'eventuale rapporto professionale che ne segue.</p>
+<h2>Cookie</h2><p>Il sito non installa cookie propri. Non serve quindi alcun consenso.</p>
+<h2>Link esterni</h2><p>Il sito rimanda a siti di terzi (enti, WebGIS, editori, DOI): per quei siti valgono le rispettive informative.</p>
+<h2>I tuoi diritti</h2><p>Puoi chiedere in ogni momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione o l'opposizione al trattamento (artt. 15-22 del Regolamento UE 2016/679) scrivendo a <a href="mailto:info@ecoview.it">info@ecoview.it</a>. Hai anche il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>).</p>
+<p class="url" style="margin-top:24px">Ultimo aggiornamento: novembre 2026.</p></div></section>`;
 V.contatti=()=>`<section class="band"><div class="wrap">${crumb([['home','Home'],[0,'Contatti']])}<h1>Contatti</h1>${url('contatti/')}
 <div class="grid" style="margin-top:28px"><div class="card"><span class="k">Referente sede Abruzzo</span><h3>Mauro Fabrizio</h3><p>+39 347 935 9447<br>maurofabrizio@ecoview.it</p><p><a href="tel:+393479359447">Chiama</a> · <a href="mailto:maurofabrizio@ecoview.it">Scrivi</a></p></div>
 <div class="card"><span class="k">Referente sede Molise</span><h3>Ludovico Frate</h3><p>+39 333 376 7557<br>ludovicofrate@ecoview.it</p><p><a href="tel:+393333767557">Chiama</a> · <a href="mailto:ludovicofrate@ecoview.it">Scrivi</a> · <a href="https://ludovicofrate.it/" target="_blank" rel="noopener">ludovicofrate.it ↗</a></p></div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="robots" content="noindex">
+<title>Ecoview – reindirizzamento</title>
+<script>
+// Vecchi indirizzi del sito WordPress (es. /chi-siamo/ o /progetti-consulenza-ambientale/gis/)
+// portati alla sezione corrispondente del nuovo sito (es. /#chi-siamo, /#gis).
+(function(){
+  var base = location.hostname.endsWith('github.io') ? '/ecoview.it/' : '/';
+  var p = location.pathname.slice(base.length - 1).replace(/^\/+|\/+$/g, '').toLowerCase();
+  var seg = p.split('/').filter(Boolean).pop() || '';
+  var map = {'home':'', 'servizi-consulenza-ambientale':'servizi', 'progetti-consulenza-ambientale':'esperienze'};
+  var r = (seg in map) ? map[seg] : seg;
+  location.replace(base + (r ? '#' + encodeURIComponent(r) : ''));
+})();
+</script></head>
+<body><p>Pagina spostata: <a href="/">vai a ecoview.it</a>.</p></body></html>
