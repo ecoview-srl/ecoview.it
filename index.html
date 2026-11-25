@@ -193,6 +193,8 @@ footer a{color:#fff}footer h3{color:#fff;font-size:18px;margin-bottom:8px}
 .enti{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 36px;margin-top:10px}
 .enti .eg.wide{grid-column:1/-1}.enti h3{font-size:1.1rem;margin:0 0 8px;padding-bottom:6px;border-bottom:2px solid var(--lime)}.enti h3 small{font-weight:400;color:var(--mute);margin-left:4px}
 .enti ul{list-style:none;margin:0;padding:0}.enti li{padding:4px 0;border-bottom:1px dashed var(--line);font-size:15px}.enti p{line-height:1.9;font-size:15px;margin:0;max-width:none}.enti p span{white-space:nowrap}.enti p span:not(:last-child)::after{content:' ·';color:var(--mute)}
+.ctaend{background:var(--green);color:var(--onG)}.ctaend .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.ctaend h2{color:#fff;margin:0 0 8px}.ctaend p{margin:0;color:var(--onG);max-width:62ch}.ctaend .btns{margin-top:0}
 </style>
 </head>
 <body>
@@ -307,7 +309,9 @@ V.home=()=>`
  <div class="head"><h2>Le persone</h2><a href="#chi-siamo">Il gruppo e le competenze →</a></div>
  <div class="founders">${PEOPLE.slice(0,2).map(p=>`<div class="founder"><img src="img/team/${p.i}.jpg" alt="${esc(p.n)}" loading="lazy"><div><span class="k cond">${esc(p.sede)}</span><h3>${esc(p.n)}</h3><p>${esc(p.s)}</p>${p.web?`<p><a href="${p.web}" target="_blank" rel="noopener">${p.web.replace(/^https?:\/\//,'').replace(/\/$/,'')} ↗</a></p>`:''}</div></div>`).join('')}</div>
  <div class="crew"><span>Con loro:</span>${PEOPLE.slice(2).map(p=>`<a href="#chi-siamo">${p.noimg?`<span class="ini">${p.i}</span>`:`<img src="img/team/${p.i}.jpg" alt="" loading="lazy">`}${esc(p.n)} <small>${esc(p.r)}</small></a>`).join('')}</div>
-</div></section>`;
+</div></section>
+<section class="band ctaend"><div class="wrap"><div><h2>Hai un progetto sul territorio?</h2><p>Valutazioni ambientali, piani, studi forestali, cartografia e WebGIS: raccontaci di cosa hai bisogno. Per un preventivo bastano il tipo di procedura, il comune e i tempi.</p></div>
+ <div class="btns"><a class="btn" href="#contatti">Contattaci</a><a class="btn ghost" href="mailto:info@ecoview.it">info@ecoview.it</a></div></div></section>`;
 
 const ACTS=[
  ...['ambiente','pianificazione','foreste'].map(k=>({h:'ecoview-'+k,img:ATT[k].img,k:ATT[k].k,t:ATT[k].t,d:ATT[k].d,cta:ATT[k].cta,areas:D.servizi[k].map(s=>s.id)})),
