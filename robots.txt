@@ -1,3 +1,4 @@
-# Bozza: non indicizzare finché il sito non sostituisce ecoview.it
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://ecoview.it/sitemap.xml
