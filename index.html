@@ -195,6 +195,9 @@ footer a{color:#fff}footer h3{color:#fff;font-size:18px;margin-bottom:8px}
 .enti ul{list-style:none;margin:0;padding:0}.enti li{padding:4px 0;border-bottom:1px dashed var(--line);font-size:15px}.enti p{line-height:1.9;font-size:15px;margin:0;max-width:none}.enti p span{white-space:nowrap}.enti p span:not(:last-child)::after{content:' ·';color:var(--mute)}
 .ctaend{background:var(--green);color:var(--onG)}.ctaend .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
 .ctaend h2{color:#fff;margin:0 0 8px}.ctaend p{margin:0;color:var(--onG);max-width:62ch}.ctaend .btns{margin-top:0}
+.collh{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.collh a{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:baseline;align-content:start;grid-template-rows:auto 1fr;padding:16px 18px;border:1px solid var(--line);border-left:4px solid var(--lime);border-radius:8px;text-decoration:none;color:var(--ink)}
+.collh a:hover{background:var(--paper)}.collh b{font-size:2rem;line-height:1;color:var(--green2);grid-row:span 2;min-width:2.2ch}.collh small{margin-top:4px}.collh span{font-weight:600}.collh small{color:var(--mute);font-size:14px;line-height:1.45}
 </style>
 </head>
 <body>
@@ -309,6 +312,10 @@ V.home=()=>`
  <div class="head"><h2>Le persone</h2><a href="#chi-siamo">Il gruppo e le competenze →</a></div>
  <div class="founders">${PEOPLE.slice(0,2).map(p=>`<div class="founder"><img src="img/team/${p.i}.jpg" alt="${esc(p.n)}" loading="lazy"><div><span class="k cond">${esc(p.sede)}</span><h3>${esc(p.n)}</h3><p>${esc(p.s)}</p>${p.web?`<p><a href="${p.web}" target="_blank" rel="noopener">${p.web.replace(/^https?:\/\//,'').replace(/\/$/,'')} ↗</a></p>`:''}</div></div>`).join('')}</div>
  <div class="crew"><span>Con loro:</span>${PEOPLE.slice(2).map(p=>`<a href="#chi-siamo">${p.noimg?`<span class="ini">${p.i}</span>`:`<img src="img/team/${p.i}.jpg" alt="" loading="lazy">`}${esc(p.n)} <small>${esc(p.r)}</small></a>`).join('')}</div>
+</div></section>
+<section class="band"><div class="wrap">
+ <div class="head"><h2>Abbiamo collaborato con…</h2><a href="#chi-siamo">Tutti i ${Object.values(D.enti).reduce((a,l)=>a+l.length,0)} nomi →</a></div>
+ <div class="collh">${[['parchi','Parchi e aree protette',['PN della Majella','PN del Gran Sasso e Monti della Laga',"PN d'Abruzzo, Lazio e Molise"]],['enti','Regioni ed enti pubblici',['Regione Abruzzo','Regione Molise','Ministero della Difesa']],['ricerca','Università e ricerca',['Università degli Studi del Molise',"Università degli Studi dell'Aquila",'CNR']],['comuni','Comuni',["L'Aquila",'Sulmona','Vasto','Ortona']],['assoc','Associazioni e progetti',['WWF Italia','Legambiente','Stazione Ornitologica Abruzzese']],['imprese','Imprese e società',['Terna Rete Italia','E-Distribuzione','Gran Sasso Acqua']]].map(([k,l,x])=>`<a href="#chi-siamo"><b>${D.enti[k].length}</b><span>${l}</span><small>${x.join(' · ')}${D.enti[k].length>x.length?'…':''}</small></a>`).join('')}</div>
 </div></section>
 <section class="band ctaend"><div class="wrap"><div><h2>Hai un progetto sul territorio?</h2><p>Valutazioni ambientali, piani, studi forestali, cartografia e WebGIS: raccontaci di cosa hai bisogno. Per un preventivo bastano il tipo di procedura, il comune e i tempi.</p></div>
  <div class="btns"><a class="btn" href="#contatti">Contattaci</a><a class="btn ghost" href="mailto:info@ecoview.it">info@ecoview.it</a></div></div></section>`;
