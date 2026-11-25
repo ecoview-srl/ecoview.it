@@ -230,7 +230,7 @@ const OLD={'valutazione-di-incidenza-ambientale':'vinca','valutazione-ambientale
 const GISA=['cartografia','banche-dati','webgis','hosting','droni'];
 const yrs=LAV.map(i=>i.y).filter(Boolean);
 const y0=Math.min(...yrs);
-const url=p=>`<div class="url">Indirizzo mantenuto: <code>ecoview.it/${p}</code></div>`;
+const url=p=>``;
 const crumb=a=>`<div class="crumb">${a.map(([h,t])=>h?`<a href="#${h}">${esc(t)}</a>`:esc(t)).join(' › ')}</div>`;
 const pubLabel=Object.fromEntries(D.pubcats);
 
@@ -337,9 +337,13 @@ function personCard(p){return `<div class="person">${p.noimg?`<span class="mono"
 ${p.b.length?`<details><summary>Profilo completo</summary>${p.b.map(x=>`<p>${esc(x)}</p>`).join('')}${p.cv?`<p><a href="${p.cv}" target="_blank" rel="noopener">Scarica il curriculum (PDF)</a></p>`:''}</details>`:''}<p style="margin:.3em 0 0"><a href="#lavori-di-${p.i.toLowerCase()}">I suoi ${LAV.filter(x=>x.p.includes(p.i)).length} lavori →</a>${D.bib.some(x=>x.p.includes(p.i))?` &nbsp; <a href="#pubblicazioni-di-${p.i.toLowerCase()}">Le sue ${D.bib.filter(x=>x.p.includes(p.i)).length} pubblicazioni →</a>`:''}</p>${p.web?`<p style="margin:.3em 0 0"><a href="${p.web}" target="_blank" rel="noopener">Sito personale ↗</a></p>`:''}</div></div>`}
 
 V['chi-siamo']=()=>`<section class="band"><div class="wrap">${crumb([['home','Home'],[0,'Persone']])}<h1>Le persone</h1>${url('chi-siamo/')}
-<div style="margin-top:24px;columns:2 340px;column-gap:48px" class="prose">
-<p>Ecoview riunisce sotto un solo marchio professionisti che lavorano insieme da anni: i due soci fondatori, che coordinano le sedi in Abruzzo e in Molise, e un gruppo di collaboratori con competenze specialistiche, dalla botanica all'acustica.</p>
-<p>Ecoview S.r.l. è socia di due spin-off universitari: <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a>, dell'Università degli Studi dell'Aquila (dal 2025), e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a>, dell'Università degli Studi del Molise (dal 2026), un legame diretto con la ricerca scientifica.</p></div></div></section>
+<h2 style="margin-top:26px">Chi siamo</h2><div style="margin-top:14px;columns:2 340px;column-gap:48px" class="prose">
+<p>ecoview.it è un portale che riunisce società e professionisti operanti nel settore ambientale, inteso nel suo significato più ampio e integrato. Il portale nasce con l'obiettivo di offrire competenze tecniche e scientifiche a supporto della pianificazione territoriale, della gestione ambientale e forestale e dei processi decisionali, attraverso un approccio interdisciplinare e scientificamente fondato.</p>
+<p>All'interno del portale opera Ecoview srl, società specializzata prevalentemente nella progettazione, gestione e sviluppo di sistemi informativi territoriali, cartografia GIS e WebGIS, nonché nel supporto tecnico alle analisi territoriali e ambientali. La società fornisce servizi a enti pubblici, aree protette, amministrazioni locali e soggetti privati, utilizzando tecnologie open source e soluzioni orientate all'efficienza e alla qualità dei dati.</p>
+<p>Ecoview srl è inoltre socia di due spin-off universitari: <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a>, dell'Università degli Studi dell'Aquila (dal 2025), e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a>, dell'Università degli Studi del Molise (dal 2026). Questo rafforza il legame con il mondo della ricerca scientifica e del trasferimento tecnologico, e favorisce l'integrazione tra attività applicative, innovazione metodologica e sviluppo di strumenti avanzati per l'analisi e la gestione del territorio.</p>
+<p>Il portale rappresenta anche lo spazio professionale dei soci fondatori, Mauro Fabrizio e Ludovico Frate, e dei loro collaboratori, che operano come liberi professionisti con autonomia operativa e specifiche competenze nei settori della pianificazione ambientale, delle valutazioni ambientali, dell'ecologia del paesaggio, della gestione forestale e della conservazione della biodiversità. Le attività svolte in forma individuale e societaria sono integrate in modo coerente, consentendo di rispondere in maniera flessibile e qualificata a esigenze diverse.</p>
+<p>Le attività di Ecoview si avvalgono infine di una rete consolidata di collaborazioni esterne, sia continuative sia attivate in funzione dei singoli progetti, che permette di coprire un ampio spettro di competenze specialistiche e di garantire un approccio multidisciplinare. Questa struttura consente di affrontare progetti complessi mantenendo elevati standard tecnico-scientifici.</p>
+</div></div></section>
 <section class="band paper"><div class="wrap"><div class="head"><h2>Soci fondatori</h2></div><div class="people big">${PEOPLE.slice(0,2).map(personCard).join('')}</div></div></section>
 <section class="band"><div class="wrap"><div class="head"><h2>I collaboratori</h2></div><div class="people">${PEOPLE.slice(2).map(personCard).join('')}</div></div></section>
 
