@@ -341,10 +341,7 @@ V['chi-siamo']=()=>`<section class="band"><div class="wrap">${crumb([['home','Ho
 <p>Ecoview S.r.l. è socia di due spin-off universitari: <a href="https://www.biostatys.it/" target="_blank" rel="noopener">bioStatys</a>, dell'Università degli Studi dell'Aquila (dal 2025), e <a href="https://spinforsrl.it/" target="_blank" rel="noopener">SpinFor</a>, dell'Università degli Studi del Molise (dal 2026), un legame diretto con la ricerca scientifica.</p></div></div></section>
 <section class="band paper"><div class="wrap"><div class="head"><h2>Soci fondatori</h2></div><div class="people big">${PEOPLE.slice(0,2).map(personCard).join('')}</div></div></section>
 <section class="band"><div class="wrap"><div class="head"><h2>I collaboratori</h2></div><div class="people">${PEOPLE.slice(2).map(personCard).join('')}</div></div></section>
-<section class="band paper"><div class="wrap"><div class="head"><h2>Chi segue cosa</h2><p>Gli specialisti di riferimento per ogni area</p></div>
-<div class="scroll"><table class="matrix stack"><thead><tr><th>Area</th><th>Specialisti</th></tr></thead><tbody>
-${[...D.servizi.consulenza,...D.servizi.gis].map(s=>`<tr><td>${s.s?`<b>${esc(s.s)}</b> – `:''}${esc(s.t)}</td><td>${s.sp.map(esc).join(', ')}</td></tr>`).join('')}
-</tbody></table></div></div></section>
+
 <section class="band spec"><div class="wrap"><div class="head"><h2>La rete scientifica</h2><p>Spin-off universitari di cui Ecoview S.r.l. è socia</p></div>
 <div class="grid2"><div><h3>bioStatys</h3><p>Spin-off dell'Università degli Studi dell'Aquila specializzato nell'analisi statistica, nella gestione e nell'elaborazione di dati scientifici e ambientali.</p></div>
 <div><h3>SpinFor</h3><p>Spin-off dell'Università degli Studi del Molise specializzato in scienze forestali, gestione sostenibile delle risorse boschive e pianificazione forestale.</p></div></div></div></section>
