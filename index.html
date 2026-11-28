@@ -461,11 +461,12 @@ V['report-tecnici']=pageHTML('report-tecnici','Report tecnici','report-tecnici/'
 V['privacy-policy']=()=>`<section class="band"><div class="wrap prose" style="max-width:860px">${crumb([['home','Home'],[0,'Privacy']])}<h1>Privacy e cookie policy</h1>
 
 <h2>Titolare del trattamento</h2><p>Ecoview srl, P.IVA 02096930678. Contatti: <a href="mailto:info@ecoview.it">info@ecoview.it</a> · PEC ecoviewsrl2021@pec.it.</p>
-<h2>Quali dati trattiamo</h2><p>Questo sito è informativo: non ha moduli, aree riservate, commenti né newsletter, e non chiede dati personali. Non usiamo cookie di profilazione né strumenti di statistica o tracciamento.</p>
+<h2>Quali dati trattiamo</h2><p>Questo sito è informativo: non ha moduli, aree riservate, commenti né newsletter, e non chiede dati personali. Non usiamo cookie di profilazione né strumenti di tracciamento.</p>
+<p><b>Statistiche di visita.</b> Per sapere quante persone visitano il sito e quali pagine leggono usiamo Cloudflare Web Analytics (Cloudflare Inc.), che raccoglie solo dati aggregati e anonimi (pagine viste, provenienza, paese, tipo di dispositivo) senza usare cookie, senza memorizzare dati sul tuo dispositivo e senza identificare o seguire i singoli visitatori. Il trasferimento verso gli Stati Uniti si basa sul Data Privacy Framework UE-USA.</p>
 <p><b>Dati di navigazione.</b> Il sito è ospitato su GitHub Pages (GitHub Inc., USA). Come ogni server web, GitHub registra in automatico alcuni dati tecnici delle visite, tra cui l'indirizzo IP, per garantire il funzionamento e la sicurezza del servizio. Il trattamento avviene secondo l'informativa di GitHub; il trasferimento verso gli Stati Uniti si basa sul Data Privacy Framework UE-USA.</p>
 <p><b>Caratteri tipografici.</b> I caratteri del sito sono caricati da Google Fonts (Google Ireland Ltd): per scaricarli il browser comunica a Google il proprio indirizzo IP.</p>
 <p><b>E-mail.</b> Se ci scrivi, usiamo il tuo indirizzo e i dati del messaggio solo per risponderti e per l'eventuale rapporto professionale che ne segue.</p>
-<h2>Cookie</h2><p>Il sito non installa cookie propri. Non serve quindi alcun consenso.</p>
+<h2>Cookie</h2><p>Il sito non installa cookie, né propri né di terze parti. Non serve quindi alcun consenso.</p>
 <h2>Link esterni</h2><p>Il sito rimanda a siti di terzi (enti, WebGIS, editori, DOI): per quei siti valgono le rispettive informative.</p>
 <h2>I tuoi diritti</h2><p>Puoi chiedere in ogni momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione o l'opposizione al trattamento (artt. 15-22 del Regolamento UE 2016/679) scrivendo a <a href="mailto:info@ecoview.it">info@ecoview.it</a>. Hai anche il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>).</p>
 <p class="url" style="margin-top:24px">Ultimo aggiornamento: novembre 2026.</p></div></section>`;
@@ -488,5 +489,6 @@ $('#burger').onclick=()=>{const n=$('#nav');n.classList.toggle('open');$('#burge
 addEventListener('hashchange',route);route();
 }
 </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bef35dee8d304ac78f3bd37fe6cd59e5"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
